@@ -185,6 +185,10 @@ def ejecutar_programa():
         # Solicitar la ruta del archivo PDB al usuario
         ruta_archivo_pdb = input("Introduce la ruta completa"
                                  " al archivo PDB: ")
+        
+        # Añadir la extensión .pdb si no está presente
+        if not ruta_archivo_pdb.lower().endswith(".pdb"):
+            ruta_archivo_pdb += ".pdb"
 
         # Verificar si el archivo PDB es de AlphaFold
         alphafold = es_alphafold(ruta_archivo_pdb)
